@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PALE X — сервер для ютуберов</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Unbounded:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    <div class="scanlines"></div>
+
+    <header class="header" id="top">
+        <canvas id="hero-canvas"></canvas>
+
+        <div class="hero-content">
+            <div class="glitch-container">
+                <h1 class="glitch" data-text="PALE X">PALE X</h1>
+            </div>
+
+            <nav class="nav">
+                <a href="#about" class="nav-link">О нас</a>
+                <a href="#trailer" class="nav-link">Трейлер</a>
+                <a href="#players" class="nav-link">Игроки</a>
+                <a href="#videos" class="nav-link">Видео</a>
+            </nav>
+        </div>
+
+        <div class="scroll-indicator" aria-hidden="true">
+            <span></span>
+        </div>
+    </header>
+
+    <nav class="topbar" id="topbar">
+        <a href="#top" class="topbar-logo nav-link">PALE X</a>
+        <div class="topbar-links">
+            <a href="#about" class="nav-link">О нас</a>
+            <a href="#trailer" class="nav-link">Трейлер</a>
+            <a href="#players" class="nav-link">Игроки</a>
+            <a href="#videos" class="nav-link">Видео</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="about" class="section">
+            <p class="kicker">01 — О НАС</p>
+            <h2 class="section-title">О нас</h2>
+            <div class="about-card reveal">
+                <h3 class="about-title">Мы — Пэйл</h3>
+                <p class="about-text">сервер начинающих ютуберов и стримеров. Изначально все мы были игроками других серверов контент-мейкеров, но судьба нас сплотила, и появился Пэйл.</p>
+                <p class="about-text">Мы прошли долгий и сложный путь, осваивая управление сервером. Теперь можем официально заявить: мы — не помойка, какой были раньше. Теперь мы — сервер, на котором играют контент-мейкеры, в глазах которых мы видим огонь, ту искру, которая показывает, что они действительно желают этим заниматься..)</p>
+            </div>
+        </section>
+
+        <section id="trailer" class="section">
+            <p class="kicker">02 — МЕДИА</p>
+            <h2 class="section-title">Трейлер</h2>
+            <div class="trailer-container">
+                <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/r4FxDSFMBHI"
+                    title="Трейлер PALE X"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    class="trailer-iframe">
+                </iframe>
+            </div>
+            <a class="player-link" href="https://www.youtube.com/watch?v=r4FxDSFMBHI" target="_blank" rel="noopener noreferrer">
+                <span class="play-ico">▶</span> Открыть в плеере
+            </a>
+        </section>
+
+        <section id="players" class="section">
+            <p class="kicker">03 — СОСТАВ</p>
+            <h2 class="section-title">Игроки</h2>
+            <div class="players-grid">
+                <div class="player-card" onclick="openModal('lolofirm')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/лайтоваяписька.png');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">LOLOFIRM</h3>
+                        <p class="player-quote">«Не так страшна толпа людей — как заходить на пэйл»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+
+                <div class="player-card" onclick="openModal('usetea')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/юзтеакарта.png');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">USETEA</h3>
+                        <p class="player-quote">«Пока работает похуй»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+
+                <div class="player-card" onclick="openModal('vadmikd')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/vadmild123.png');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">VADMIKD</h3>
+                        <p class="player-quote">«Когда дрочит че бормочет»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+
+                <div class="player-card" onclick="openModal('dolo2ez')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/долоез карта.png');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">DOLO2EZ</h3>
+                        <p class="player-quote">«Он пiздел, попал с моим ботинком на свiдание»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+
+                <div class="player-card" onclick="openModal('dombezkrishi')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/домбезкрышикарта.png');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">DOMBEZKRISHI</h3>
+                        <p class="player-quote">«Хлеб молоко яйца пиколини и сосиски»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+
+                <div class="player-card" onclick="openModal('ricsa5c')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/риксишкарта.png');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">RICSA5C</h3>
+                        <p class="player-quote">«А в чем он не прав?»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+
+                <div class="player-card" onclick="openModal('weisss')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/вэйс11212.png');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">WEISSS</h3>
+                        <p class="player-quote">«Снизу гей»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+
+                <div class="player-card" onclick="openModal('demenca')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/демансакарта.png');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">DEMENCA</h3>
+                        <p class="player-quote">«Ничто не вечно, пока есть время»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+
+                <div class="player-card" onclick="openModal('just_johnny')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/жонекарта.png');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">JUST_JOHNNY</h3>
+                        <p class="player-quote">«Мяу»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+
+                <div class="player-card" onclick="openModal('fi6ka')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/photo_2026-09-30_14-54-34.jpg');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">FI6KA</h3>
+                        <p class="player-quote">«Запомни, Контент — не волк, Контент — ворк. А волк — это ходить.»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+
+                <div class="player-card" onclick="openModal('faultdyra')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/photo_2026-09-30_14-54-26.jpg');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">FAULTDYRA</h3>
+                        <p class="player-quote">«Это ни в коем случае не баг, это фича.»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+
+                <div class="player-card" onclick="openModal('dasfaa')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/photo_2026-09-30_14-54-21.jpg');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">DASFAA</h3>
+                        <p class="player-quote">«Нуу, думаю привет»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+
+                <div class="player-card" onclick="openModal('blooban')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/блубанкарта.png');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">BLOOBAN</h3>
+                        <p class="player-quote">«Тот кто придумал цитаты — сын шлюхи»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+
+                <div class="player-card" onclick="openModal('dizeign')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/туфта.png');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">DIZEIGN</h3>
+                        <p class="player-quote">«$IO_FLUSH$#Device#HarddiskVolume2 Offset:0x38725B7DBD Len:212KB FUA:0 Status:0x00000000»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+
+                <div class="player-card" onclick="openModal('justin_wolfor')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/джасткарта.png');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">JUSTIN_WOLFOR</h3>
+                        <p class="player-quote">«Я просто боюсь забыть себя»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+
+                <div class="player-card" onclick="openModal('virom321')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/виромкарта.png');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">VIROM321</h3>
+                        <p class="player-quote">«Было 3 шута, один здох другой повесился, а третий перед вами»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+
+                <div class="player-card" onclick="openModal('endercat')">
+                    <div class="player-avatar-wrap"><div class="player-avatar" style="background-image: url('player_cards/эндкэт.png');"></div></div>
+                    <div class="player-info">
+                        <h3 class="player-name">ENDERCAT</h3>
+                        <p class="player-quote">«Жизнь — это самое удивительное шоу»</p>
+                        <span class="player-open">Открыть дело →</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="videos" class="section">
+            <p class="kicker">04 — ВИДЕОФОНД</p>
+            <h2 class="section-title">Видео</h2>
+            <div class="videos-grid">
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                            title="Видео"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Название видео</h3>
+                        <p>Автор: Игрок</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                            title="Видео"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Название видео</h3>
+                        <p>Автор: Игрок</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                            title="Видео"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Название видео</h3>
+                        <p>Автор: Игрок</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <div class="modal-avatar" id="modal-avatar"></div>
+                <h2 id="modal-name">Игрок</h2>
+            </div>
+            <p class="modal-quote" id="modal-quote">Цитата</p>
+            <div class="modal-video">
+                <iframe
+                    id="modal-video-iframe"
+                    width="100%"
+                    height="315"
+                    src=""
+                    title="Видео игрока"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="modal-socials" id="modal-socials"></div>
+        </div>
+    </div>
+
+    <!-- Книжка: все карточки -->
+    <button class="book-btn" id="bookBtn" aria-label="Все участники">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            <path d="M9 7h7M9 11h7"/>
+        </svg>
+        <span class="book-btn-label">Карточки</span>
+    </button>
+
+    <div class="book-overlay" id="bookOverlay">
+        <div class="book-panel">
+            <div class="book-head">
+                <div>
+                    <p class="kicker">КАРТОТЕКА</p>
+                    <h3 class="book-title">Все участники</h3>
+                </div>
+                <span class="close-btn" id="bookClose">&times;</span>
+            </div>
+            <div class="book-grid" id="bookGrid">
+                <!-- Карточки генерируются скриптом -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-logo">PALE X</div>
+        <p>© 2026 PALE X. Сервер для ютуберов.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
